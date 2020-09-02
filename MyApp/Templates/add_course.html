@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>InsightBrain</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="{% static 'css/jquery.nice-number.min.css' %}">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap2.min.css' %}">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+</head>
+
+<body>
+
+   <!--====== PRELOADER PART START ======-->
+
+    <!--====== HEADER PART START ======-->
+
+<header id="header-part">
+
+     
+
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+                            <a href="index-2.html">
+                                <img src="{% static 'images/logon.png' %}" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="{% static 'images/all-icon/support.png' %}" alt="icon">
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>913 142 5723</span>
+                                </div>
+                            </div>
+                           <div class="button float-left">
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="main-btn">{{ request.user.first_name }}</a>
+{% else %}
+                                <a href="{% url 'login' %}" class="main-btn">Login</a>
+                            </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a href="{% url 'course_home' %}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'about' %}">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'courseList' %}">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+
+<center>
+    <h1>Add New Course</h1><br>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        category:{{ form.category }}<br><br><br>
+        duration:{{ form.duration }}<br><br>
+        price:{{ form.price }}<br><br>
+        lectures:{{ form.lectures }}<br><br>
+        <div class="acc2">img:</div><div class="acc1"> {{ form.img }}</div><br>
+        <div class="a4">description:{{ form.overview }}</div><br>
+        <div class="a5">rating:{{ form.rating }}</div><br>
+        <div class="a5">title:{{ form.title }}</div><br>
+       <!--Name: <input type="text" name="title" placeholder="Name" /> <br><br>
+       Artist: <input type="text" name="artist" placeholder="Artist" /> <br><br>
+       Poster: <input type="file" name="img1" placeholder="Poster" /> <br><br>
+       Company: <input type="text" name="company" placeholder="Company" /> <br><br> -->
+        <input type="submit" value="Add">
+    </form>
+</center>
+
+    <!--====== FOOTER PART START ======-->
+
+     <footer id="footer-part">
+        <div class="footer-top pt-40 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-about mt-40">
+                            <div class="logo">
+                                <a href="#"><img src="{% static 'images/logon.png' %}" alt="Logo"></a>
+                            </div>
+                            <p>LEARN ANYTHING: Discover courses in over 2,000 topics - from coding and data science to marketing, Photoshop, yoga, and more.</p>
+
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                         <div class="footer-link mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Sitemap</h6>
+                            </div>
+                            <ul>
+                                <li><a href="{% url 'course_home' %}"><i class="fa fa-angle-right"></i>Home</a></li>
+                                <li><a href="{% url 'about' %}"><i class="fa fa-angle-right"></i>About us</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="{% url 'courseList' %}"><i class="fa fa-angle-right"></i>Courses</a></li>
+                                <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-address mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Contact Us</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>143, M.P. Nagar,Bhopal</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>+91 91314 25723</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>insightbarin@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- footer address -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer top -->
+<!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TO TP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!--====== BACK TO TP PART ENDS ======-->
+
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>InsightBrain</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="{% static 'css/jquery.nice-number.min.css' %}">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+</head>
+
+<body>
+
+
+    <!--====== PRELOADER PART START ======-->
+
+    <!--====== HEADER PART START ======-->
+
+<header id="header-part">
+
+     
+
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+
+                                <img src="{% static 'images/logon.png' %}" alt="Logo">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="{% static 'images/all-icon/support.png' %}" alt="icon">
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>913 142 5723</span>
+                                </div>
+                            </div>
+                               <div class="button float-left">
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="main-btn">{{ request.user.first_name }}</a>
+{% else %}
+                                <a href="{% url 'login' %}" class="main-btn">Login</a>
+                            </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a href="{% url 'course_home' %}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'about' %}">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'courseList' %}">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== SEARCH BOX PART START ======-->
+
+    <div class="search-box">
+        <div class="serach-form">
+            <div class="closebtn">
+                <span></span>
+                <span></span>
+            </div>
+            <form action="#">
+                <label>
+                    <input type="text" placeholder="Search by keyword">
+                </label>
+                <button><i class="fa fa-search"></i></button>
+            </form>
+        </div> <!-- serach form -->
+    </div>
+
+    <!--====== SEARCH BOX PART ENDS ======-->
+   
+    <!--====== PAGE BANNER PART START ======-->
+    
+    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(images/page-banner-1.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>About Us</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== PAGE BANNER PART ENDS ======-->
+   
+    <!--====== ABOUT PART START ======-->
+    
+    <section id="about-page" class="pt-70 pb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>About us</h5>
+                        <h2>Welcome to InsideBrain </h2>
+                    </div> <!-- section title -->
+                    <div class="about-cont">
+                        <p>InsightBrain is an online learning platform featuring 150,000 video courses taught by expert instructors. Take courses in anything from programming languages like Python and Java to personal development classes like design, drawing, writing and yoga. Join the millions of learners around the world who are mastering new skills, advancing their careers, and exploring new hobbies on InsightBrain.
+
+<br><br>LEARN ANYTHING: Discover courses in over 2,000 topics - from coding and data science to marketing, Photoshop, yoga, and more.</p>
+                    </div>
+                </div> <!-- about cont -->
+                <div class="col-lg-7">
+                    <div class="about-image mt-50">
+                        <img src="{% static 'images/about/about-2.jpg' %}" alt="About">
+                    </div>  <!-- about imag -->
+                </div> 
+            </div> <!-- row -->
+            <div class="about-items pt-60">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-singel-items mt-30">
+                            <span>01</span>
+                            <h4>Why Choose us</h4>
+                            <p>InsightBrain has both free and paid courses within your budget. Once you’ve enrolled in a course, you’ll have lifetime access to the content.</p>
+                        </div> <!-- about singel -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-singel-items mt-30">
+                            <span>02</span>
+                            <h4>Our Mission</h4>
+                            <p>With a mission to improve lives through learning, it's no surprise that we place tremendous emphasis on the role of learning in our own lives and work.</p>
+                        </div> <!-- about singel -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-singel-items mt-30">
+                            <span>03</span>
+                            <h4>Our vission</h4>
+                            <p>We understand that learning isn't an interruption of our work or a sign of weakness—it's foundational to our growth, both as individuals and as a business.</p>
+                        </div> <!-- about singel -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- about items -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+
+
+    <!--====== TEACHERS PART START ======-->
+    
+    <section id="teachers-part" class="pt-65 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50 pb-35">
+                        <h5>Featured Teachers</h5>
+                        <h2>Meet Our teachers</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                {% for i in data %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="singel-teachers mt-30 text-center">
+                        <div class="image">
+                            <img src="{{ i.photo.url }}" alt="Teachers">
+                        </div>
+                        <div class="cont">
+                            <a href="teachers-singel.html"><h6>{{ i.name }}</h6></a>
+
+                        </div>
+                    </div> <!-- singel teachers -->
+                </div>
+                {% endfor %}
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== TEACHERS PART ENDS ======-->
+   
+   <!--====== FOOTER PART START ======-->
+
+     <footer id="footer-part">
+        <div class="footer-top pt-40 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-about mt-40">
+                            <div class="logo">
+                                <a href="#"><img src="{% static 'images/logon.png' %}" alt="Logo"></a>
+                            </div>
+                            <p>LEARN ANYTHING: Discover courses in over 2,000 topics - from coding and data science to marketing, Photoshop, yoga, and more.</p>
+
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                         <div class="footer-link mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Sitemap</h6>
+                            </div>
+                            <ul>
+                                <li><a href="{% url 'course_home' %}"><i class="fa fa-angle-right"></i>Home</a></li>
+                                <li><a href="{% url 'about' %}"><i class="fa fa-angle-right"></i>About us</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="{% url 'courseList' %}"><i class="fa fa-angle-right"></i>Courses</a></li>
+                                <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-address mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Contact Us</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>143, M.P. Nagar,Bhopal</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>+91 91314 25723</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>insightbarin@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- footer address -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer top -->
+<!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TO TP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!--====== BACK TO TP PART ENDS ======-->
+
+</body>
+</html>

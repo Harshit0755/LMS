@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+  <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>InsightBrain</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="{% static 'css/jquery.nice-number.min.css' %}">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+   
+</head>
+
+<body>
+
+   <!--====== PRELOADER PART START ======-->
+
+    <!--====== HEADER PART START ======-->
+
+<header id="header-part">
+
+     
+
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+
+                                <img src="{% static 'images/logon.png' %}" alt="Logo">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="{% static 'images/all-icon/support.png' %}" alt="icon">
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>913 142 5723</span>
+                                </div>
+                            </div>
+                               <div class="button float-left">
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="main-btn">{{ request.user.first_name }}</a>
+{% else %}
+                                <a href="{% url 'login' %}" class="main-btn">Login</a>
+                            </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a href="{% url 'course_home' %}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'about' %}">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'courseList' %}">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+
+    </header>
+   
+
+   
+    <!--====== ABOUT PART START ======-->
+    
+    <section id="about-part" class="pt-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>About us</h5>
+                        <h2>Welcome to InsightBrain </h2>
+                    </div> <!-- section title -->
+                    <div class="about-cont">
+                        <p>InsightBrain is an online learning platform featuring 150,000 video courses taught by expert instructors. Take courses in anything from programming languages like Python and Java to personal development classes like design, drawing, writing and yoga. Join the millions of learners around the world who are mastering new skills, advancing their careers, and exploring new hobbies on InsightBrain.
+
+<br>LEARN ANYTHING: Discover courses in over 2,000 topics - from coding and data science to marketing, Photoshop, yoga, and more.
+
+</p>
+                        <a href="{% url 'courseList' %}" class="main-btn mt-55">Explore</a>
+                    </div>
+                </div> <!-- about cont -->
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="about-bg">
+            <img src="{% static 'images/about/bg-1.png' %}" alt="About">
+        </div>
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+   
+
+    <!--====== COURSE PART START ======-->
+    
+    <section id="course-part" class="pt-115 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-45">
+                        <h5>Our course</h5>
+                        <h2>Featured courses </h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row course-slied mt-30">
+            {% for i in courses %}
+                                   <div class="col-lg-4 col-md-6">
+                            <div class="singel-course mt-30">
+                                <div class="thum">
+                                    <div class="image">
+                                        <img src="{{ i.img.url }}" alt="Course" width="700" height="220">
+                                    </div>
+                                </div>
+                                <div class="cont">
+
+                                    <ul>
+                                        {% if i.rating >= 0.5 %}
+                                            <li><i class="fa fa-star"></i></li>
+                                                 {% else %}
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                {% endif %}
+
+                                                                {% if i.rating >= 1.5 %}
+                                                                   <li><i class="fa fa-star"></i></li>
+                                                                     {% else %}
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                {% endif %}
+
+                                                                {% if i.rating >= 2.5 %}
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                     {% else %}
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                {% endif %}
+
+                                                                {% if i.rating >= 3.5 %}
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    {% else %}
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                               {% endif %}
+
+                                                                {% if i.rating >= 4.5 %}
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                     {% else %}
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                 {% endif %}
+                                    </ul>
+                                    <span></span>
+                                    <a href="{% url 'course_detail' i.id %}"><h4>{{ i.title }}</h4></a>
+                                    <div class="course-teacher">
+                                        <div class="thum">
+                                            <img src="{{ i.instructor_set.first.photo.url }}" alt="teacher">
+                                        </div>
+                                        <div class="name">
+                                            <h6>Instructor- {{ i.instructor_set.first.name}}</h6>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> <!-- singel course -->
+                        </div>
+                       {% endfor %}
+            </div> <!-- course slied -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== COURSE PART ENDS ======-->
+   
+    <!--====== VIDEO FEATURE PART START ======-->
+
+    <section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({% static 'images/bg-1.jpg' %})">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-last order-lg-first">
+                    <div class="video text-lg-left text-center pt-50">
+                        </div> <!-- row -->
+                </div>
+                <div class="col-lg-5 offset-lg-1 order-first order-lg-last">
+                    <div class="feature pt-50">
+                        <div class="feature-title">
+                            <h3>Our Facilities</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-1.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Global Certificate</h4>
+                                        <p>Get certified  globally with certificate you can use all around the world.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-2.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Alumni Support</h4>
+                                        <p>Connect socially with our Alumni.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                            <li>
+                                <div class="singel-feature">
+                                    <div class="icon">
+                                        <img src="{% static 'images/all-icon/f-3.png' %}" alt="icon">
+                                    </div>
+                                    <div class="cont">
+                                        <h4>Books & Library</h4>
+                                        <p>Online E-library for more deep learning on every topic.</p>
+                                    </div>
+                                </div> <!-- singel feature -->
+                            </li>
+                        </ul>
+                    </div> <!-- feature -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="feature-bg"></div> <!-- feature bg -->
+    </section>
+
+    <!--====== VIDEO FEATURE PART ENDS ======-->
+
